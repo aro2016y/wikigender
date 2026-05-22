@@ -18,6 +18,7 @@ https://aro2016y.github.io/wikigender/
 ## Explainer Notebook
 
 https://nbviewer.org/github/aro2016y/wikigender/blob/main/downloads/explainer-notebook.ipynb
+(If this doesn't work, go to downloads/explainer-notebook.ipynb )
 
 ## Data
 
