@@ -13,7 +13,7 @@ The public website presents the main story for a non-technical reader. The expla
 
 The website is hosted with GitHub Pages:
 
-https://github.com/aro2016y/wikigender
+https://aro2016y.github.io/wikigender/
 
 ## Explainer Notebook
 
