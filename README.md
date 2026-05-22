@@ -13,11 +13,11 @@ The public website presents the main story for a non-technical reader. The expla
 
 The website is hosted with GitHub Pages:
 
-[hjemmeside github pages her]
+https://github.com/aro2016y/wikigender
 
 ## Explainer Notebook
 
-[nbviewer link her]
+https://nbviewer.org/github/aro2016y/wikigender/blob/main/downloads/explainer-notebook.ipynb
 
 ## Data
 
