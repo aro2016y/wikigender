@@ -1,0 +1,7 @@
+category,metric,observed_women_minus_men,p_value_two_sided,bonferroni_threshold,significant_bonferroni,direction,interpretation
+network,edges_per_100_paragraphs,51.98610498723275,0.039603960396039604,0.008333333333333333,False,higher for women,Suggestive network difference; not significant after correction
+network,avg_clustering,-0.028543155758571803,0.6039603960396039,0.008333333333333333,False,higher for men,Suggestive network difference; not significant after correction
+network,density,-0.030847425354223246,0.6831683168316832,0.008333333333333333,False,higher for men,Suggestive network difference; not significant after correction
+network,avg_weighted_degree,-26.116363636363644,0.7524752475247525,0.008333333333333333,False,higher for men,Suggestive network difference; not significant after correction
+theme,science_words_per_1000,8.02483648103912,0.009900990099009901,0.008333333333333333,False,higher for women,Theme difference; interpret cautiously after correction
+theme,family_words_per_1000,1.429840898267586,0.0297029702970297,0.008333333333333333,False,higher for women,Theme difference; interpret cautiously after correction

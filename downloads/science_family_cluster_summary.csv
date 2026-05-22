@@ -1,0 +1,5 @@
+gender_group,cluster,mentions,clean_words,mentions_per_1000_words
+men,family,1019,217596,4.682990496148826
+men,science,3624,217596,16.654717917608778
+women,family,991,162118,6.112831394416412
+women,science,4001,162118,24.6795543986479

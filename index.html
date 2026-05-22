@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikigender - How Biographies Frame Scientists</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="top">
+    <section class="wiki-portal" aria-labelledby="portal-title">
+      <div class="central-textlogo">
+        <h1 id="portal-title" class="screen-reader-text">Wikigender - How Biographies Frame Scientists</h1>
+        <img class="wikigender-wordmark" src="assets/wikigender-wordmark.png" width="270" height="38" alt="Wikigender">
+        <p>How Biographies Frame Scientists</p>
+      </div>
+
+      <nav class="portal-constellation" aria-label="Project overview">
+        <a class="portal-link lang1" href="#dataset"><strong>Dataset</strong><small>180 total articles</small></a>
+        <a class="portal-link lang2" href="#dataset"><strong>Males to Females</strong><small>90 articles each</small></a>
+        <a class="portal-link lang3" href="#text"><strong>Words</strong><small>380,000 cleaned words</small></a>
+        <a class="portal-link lang4" href="#dataset"><strong>STEM fields</strong><small>5 fields x 36 articles</small></a>
+        <a class="portal-link lang5" href="#text"><strong>Themes</strong><small>family vs science words</small></a>
+        <a class="portal-link lang6" href="downloads/explainer-notebook.ipynb" download><strong>Research</strong><small>explainer notebook</small></a>
+        <a class="portal-link lang7" href="#network"><strong>Networks</strong><small>lexical graphs compared</small></a>
+        <a class="portal-link lang8" href="#downloads"><strong>Open-source</strong><small>use our data</small></a>
+        <a class="portal-link lang9" href="#evidence"><strong>Results</strong><small>6 tests; 1 stands out</small></a>
+        <a class="portal-link lang10" href="#authors"><strong>Authors</strong><small>Andrew Osias, Mia Paarup</small></a>
+
+        <img class="wiki-globe-image" src="assets/wikigender-globe.png" width="200" height="183" alt="" aria-hidden="true">
+      </nav>
+
+      <form class="portal-search" action="#article">
+        <label for="searchInput" class="screen-reader-text">Search this project</label>
+        <input id="searchInput" name="search" type="search" placeholder="Search this project" autocomplete="off">
+        <button type="submit" aria-label="Search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16.5 16.5 4 4"></path>
+          </svg>
+          <span class="screen-reader-text">Search</span>
+        </button>
+      </form>
+
+      <div class="read-article-wrapper">
+        <a class="read-article" href="#article"><span class="read-icon" aria-hidden="true">文</span><span>Read article below</span><span class="read-arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <header class="article-nav" aria-label="Article navigation">
+      <a class="brand" href="#top">Wikigender</a>
+      <nav>
+        <a href="#dataset">Dataset</a>
+        <a href="#text">Text</a>
+        <a href="#network">Network</a>
+        <a href="#evidence">Claim</a>
+        <a href="#downloads">Files</a>
+      </nav>
+    </header>
+
+    <article id="article" class="wiki-article">
+      <header class="article-heading">
+        <h1>How biographies frame scientists</h1>
+        <p>We looked at 180 English Wikipedia biographies of women and men scientists. Not to judge the scientists themselves, but to look at the words placed around them.</p>
+      </header>
+
+      <section id="dataset" class="article-section">
+        <div class="section-kicker">1 Dataset</div>
+        <div class="section-body">
+          <h2>The collection is small on purpose.</h2>
+          <p>The dataset is a balanced wall of biographies: 18 women and 18 men in each of five STEM fields. Biology, chemistry, computer science, mathematics, and physics are not all of science, but they give us a focused comparison.</p>
+          <p>The balancing matters. Without it, we might accidentally compare one gender in one field against another gender in another field and call that a gender difference.</p>
+          <div class="metric-strip">
+            <div><strong id="womenArticles">90</strong><span>women biographies</span></div>
+            <div><strong id="menArticles">90</strong><span>men biographies</span></div>
+            <div><strong id="womenWords">162k</strong><span>women cleaned words</span></div>
+            <div><strong id="menWords">218k</strong><span>men cleaned words</span></div>
+          </div>
+          <p class="wall-note">The number of biographies is balanced. The raw amount of text is not. Therefore, later comparisons utilize rates in lieu of raw counts.</p>
+          <figure class="plot-figure full-plot">
+            <figcaption>Balance check and average words per biography</figcaption>
+            <img class="plot-image" src="assets/balanced%20biographies%20by%20field,%20average%20article%20length.png" alt="Two bar charts showing balanced biographies by field and average article length by gender group." loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <section id="text" class="article-section">
+        <div class="section-kicker">2 Text</div>
+        <div class="section-body">
+          <h2>The clearest difference was not family language.</h2>
+          <p>We counted two simple groups of words: science words and family words. The family words were interesting, but they did not survive the strict correction (Bonferroni correction). The science words did.</p>
+          <p class="finding">In this sample, women scientists' biographies used more science-related words per 1,000 cleaned words. That result still held after 1,000 within-field permutations and Bonferroni correction.</p>
+          <figure class="plot-figure full-plot">
+            <figcaption>Theme words per 1,000 cleaned words</figcaption>
+            <img class="plot-image" src="assets/science%20vs%20family%20words%20overall,%20science%20and%20family%20words%20by%20field.png" alt="Bar charts comparing science and family word rates overall and by field for men and women biographies." loading="lazy">
+          </figure>
+          <div class="result-panel gallery-label plot-note">
+            <p class="panel-label">Note</p>
+            <p>The result does not mean women scientists are "more scientific". It means that, in this balanced set of pages, their Wikipedia biographies used science-related vocabulary more densely.</p>
+            <p>That surprised us, because we expected the strongest difference to be family language. The data did not really support that as a robust claim.</p>
+          </div>
+          <div class="chart-pair side-room">
+            <figure class="plot-figure">
+              <figcaption>Words that pull toward each side</figcaption>
+              <img class="plot-image" src="assets/words%20relatively%20associated%20with%20women%27s%20or%20men%27s%20biographies,%20log%20odds.png" alt="Diverging bar chart of words relatively associated with women's or men's biographies." loading="lazy">
+            </figure>
+            <figure class="plot-figure">
+              <figcaption>Two-word phrases as context, not proof</figcaption>
+              <img class="plot-image" src="assets/Bigrams%20relatively%20associated%20with%20women%27s%20or%20men%27s%20biographies,%20log%20odds.png" alt="Diverging bar chart of bigrams relatively associated with women's or men's biographies." loading="lazy">
+            </figure>
+          </div>
+          <p class="wall-note">These word and bigram plots are useful for noticing texture, but they can also pick up on confounders, such as individual people, institutions, and places. This is simply the first stage of the analysis, and is for elucidating the data rather than evidence of any patterns.</p>
+        </div>
+      </section>
+
+      <section id="network" class="article-section network-article-section">
+        <div class="section-kicker">3 Network</div>
+        <div class="section-body">
+          <h2>The biographies also make word constellations.</h2>
+          <p>Here the text becomes a map. Each dot is a common word. A line appears when two words show up in the same paragraph. Stronger lines mean the pair appears together more often.</p>
+          <p>The maps are beautiful, but they are for illustrative purposes. They help show how messy lexical analysis can be. Our findings showed that women was commonly used in womens articles -- we believe that this is due to the women being particularly historically barred from science and academia.</p>
+          <div class="network-grid exhibit-grid">
+            <figure class="plot-figure">
+              <figcaption>Women's biography word map</figcaption>
+              <img class="plot-image network-image" src="assets/woman%27s%20biography%20semantic%20network.png" alt="Semantic word co-occurrence network for women's biographies." loading="lazy">
+            </figure>
+            <figure class="plot-figure">
+              <figcaption>Men's biography word map</figcaption>
+              <img class="plot-image network-image" src="assets/men%27s%20biography%20semantic%20network.png" alt="Semantic word co-occurrence network for men's biographies." loading="lazy">
+            </figure>
+          </div>
+          <div class="gallery-label network-caption">
+            <p><strong>How to read the map:</strong> bigger, yellower dots are more connected words. Lines show paragraph-level co-occurrence.</p>
+          </div>
+          <figure class="plot-figure full-plot quiet-chart"><figcaption>Network summary metrics</figcaption><img class="plot-image" src="assets/edges,%20density,%20avg_clustering,%20clustering_z.png" alt="Bar charts comparing network edge rate, density, average clustering, and clustering z-score for women and men biography networks." loading="lazy"></figure>
+        </div>
+      </section>
+
+      <section id="evidence" class="article-section">
+        <div class="section-kicker">4 Claim</div>
+        <div class="section-body">
+          <h2>So what can we actually say?</h2>
+          <p>We shuffled gender labels within each field 1,000 times. This gives a simple question: would a difference this large appear if the gender labels were random inside the matched fields?</p>
+          <p>After correcting for six tested outcomes, only one result stays clearly below the strict threshold: science words per 1,000 cleaned words.</p>
+          <div class="table-wrap">
+            <table id="resultTable">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Measure</th>
+                  <th>Women - men</th>
+                  <th>p-value</th>
+                  <th>Bonferroni</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="finding quiet">The cautious conclusion: these Wikipedia biographies do not show a simple story where men get science and women get family. In this sample, the strongest robust pattern is actually more dense science language in women scientists' biographies.</p>
+          <p class="wall-note">This is still exploratory. It describes Wikipedia framing patterns in this dataset, and not as a statement about the causal nature.</p>
+        </div>
+      </section>
+
+      <section id="downloads" class="article-section downloads-section">
+        <div class="section-kicker">5 Files</div>
+        <div class="section-body">
+          <h2>For the back room.</h2>
+          <p>The website is the public story. The notebook is where the machinery lives: collection, cleaning, matching, word counts, networks, and tests. Feel free to explore the notebook and use the data for your own studies.</p>
+          <div class="downloads-grid">
+            <a href="downloads/explainer-notebook.ipynb" download><span>Notebook</span><strong>Explainer notebook</strong></a>
+            <a href="downloads/balanced_scientist_biographies_wikipedia.csv" download><span>CSV</span><strong>Balanced biographies</strong></a>
+            <a href="downloads/scientist_biographies_wikipedia.csv" download><span>CSV</span><strong>Filtered biographies</strong></a>
+            <a href="downloads/bonferroni_permutation_summary.csv" download><span>CSV</span><strong>Permutation + Bonferroni</strong></a>
+            <a href="downloads/network_metrics_cleaned.csv" download><span>CSV</span><strong>Network metrics</strong></a>
+            <a href="downloads/women_scientists_semantic_network_cleaned.gexf" download><span>GEXF</span><strong>Women network</strong></a>
+            <a href="downloads/men_scientists_semantic_network_cleaned.gexf" download><span>GEXF</span><strong>Men network</strong></a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="authors" class="site-footer">
+    <p>By Andrew Osias and Mia Paarup. Exploratory analysis: patterns describe Wikipedia biography framing, not scientists themselves.</p>
+  </footer>
+
+  <script src="assets/site-data.js"></script>
+  <script src="app.js?v=10"></script>
+</body>
+</html>
